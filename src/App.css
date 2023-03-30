@@ -1,7 +1,12 @@
-:root {
-  --header-height: 48px;
-  --footer-height: 74px;
+p {
+  font-size: 16px;
+  font-size: clamp(1rem, 1.25vh, 1.25rem);
+  font-size: max(1rem, 1vw);
+  text-align: left;
+  margin-bottom: 0.5rem;
+  line-height: 1.6rem;
 }
+
 .content_height_adjuster {
   background-color: var(--background-color);
   background-color: rgba(220, 220, 220, 0.3);
@@ -26,8 +31,7 @@ fieldset.fieldSet {
   display: block;
   border: 1px solid var(--muted-color);
   background-color: var(--background-color);
-  background-color: var(--muted-color);
-  background-color: transparent;
+  /* background-color: transparent; */
   flex-grow: 1;
 }
 fieldset legend {
