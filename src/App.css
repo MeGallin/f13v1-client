@@ -1,42 +1,51 @@
-#root {
-  max-width: 1280px;
+:root {
+  --header-height: 48px;
+  --footer-height: 74px;
+}
+.content_height_adjuster {
+  background-color: var(--background-color);
+  background-color: rgba(220, 220, 220, 0.3);
+  height: calc(100vh - var(--header-height) - var(--footer-height));
   margin: 0 auto;
-  padding: 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Helper classes */
+.small-text {
+  font-size: 0.6em;
+}
+.center-text {
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.border-temp {
+  border: 2px solid green;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+fieldset.fieldSet {
+  display: block;
+  border: 1px solid var(--muted-color);
+  background-color: var(--background-color);
+  background-color: var(--muted-color);
+  background-color: transparent;
+  flex-grow: 1;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+fieldset legend {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: black;
 }
-
-.card {
-  padding: 2em;
+.race-result-circle {
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  border-radius: 50%;
+  font-size: 0.8em;
+  color: #fff;
+  text-align: center;
+  background: #000;
 }
-
-.read-the-docs {
-  color: #888;
+.flex-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
