@@ -1,7 +1,7 @@
-import React from 'react';
+import LatestRaceResultComponent from '../../Components/LatestRaceResult/LatestRaceResultComponent';
 
 const HomeView = () => {
-  return <div>HomeView</div>;
+  return <LatestRaceResultComponent />;
 };
 
 export default HomeView;
