@@ -4,6 +4,10 @@ import { latestRaceResultAction } from '../../Store/Actions/RaceResultsActions';
 import './LatestRaceResultComponent.css';
 
 import { randomId } from '../../Utils/RandomId';
+import FlagComponent from '../../Common/Flags/FlagComponent';
+import TeamLogo from '../../Common/TeamLogo/TeamLogoComponent';
+import UpArrowsComponent from '../../Common/UpArrows/UpArrowsComponent';
+import DownArrowsComponent from '../../Common/DownArrows/DownArrowsComponent';
 
 const LatestRaceResultComponent = () => {
   const dispatch = useDispatch();
@@ -19,6 +23,7 @@ const LatestRaceResultComponent = () => {
   const resultsData = MRData?.RaceTable?.Races.flatMap((data) => {
     return data;
   });
+
   return (
     <>
       {error ? 'Error comp pending...' : null}
@@ -28,12 +33,12 @@ const LatestRaceResultComponent = () => {
         <>
           {resultsData?.map((result) => (
             <div key={randomId(8)}>
-              {console.log(result)}
               <table>
                 <caption>
-                  {result.raceName}
-                  Season:{result.season}
-                  Round{result.round}
+                  <div> {result.raceName}</div>
+                  <div>
+                    {result.season} Round {result.round}
+                  </div>
                 </caption>
                 <thead>
                   <tr>
@@ -51,10 +56,41 @@ const LatestRaceResultComponent = () => {
                     <tr key={randomId(8)}>
                       <td>{el.position}</td>
                       <td>{el.points}</td>
-                      <td>{el.Driver.code}</td>
-                      <td>{el.Constructor?.name}</td>
+                      <td>
+                        <div className="flex-wrapper">
+                          <div>
+                            <FlagComponent
+                              nationality={el.Driver?.nationality}
+                            />
+                          </div>
+                          <div>
+                            <div>
+                              {el.Driver?.givenName} {el.Driver?.familyName}
+                            </div>
+                            <div>
+                              {el.Driver?.code}{' '}
+                              <sub>{el.Driver?.permanentNumber}</sub>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <sub>{el.Constructor?.name}</sub>
+                        <TeamLogo team={el.Constructor?.name} />
+                      </td>
                       <td>{el.FastestLap?.lap}</td>
-                      <td>{el.grid}</td>
+                      <td>
+                        <div>{el.grid}</div>
+
+                        <div>
+                          {Number(el.grid) - Number(el.position) < 0 ? (
+                            <DownArrowsComponent />
+                          ) : (
+                            <UpArrowsComponent />
+                          )}
+                          {Number(el.grid) - Number(el.position)} place[s].
+                        </div>
+                      </td>
                       <td>
                         <div>{el.status}</div>
                         {el.Time?.time}

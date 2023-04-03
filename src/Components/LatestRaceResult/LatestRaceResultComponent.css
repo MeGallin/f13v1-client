@@ -1,5 +1,4 @@
 table {
-  border: 1px solid #ccc;
   border-collapse: collapse;
   margin: 0;
   padding: 0;
@@ -9,12 +8,15 @@ table {
 
 table caption {
   font-size: 1.5em;
-  margin: 0.5em 0 0.75em;
+  padding: 0.2em;
+  color: var(--main-font-colour);
+  text-transform: uppercase;
 }
 
 table tr {
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
+  background-color: var(--main-bg-colour);
+  color: var(--main-font-colour);
+  border: 1px solid var(--border-colour-light);
   padding: 0.35em;
 }
 
@@ -51,13 +53,13 @@ table th {
   }
 
   table tr {
-    border-bottom: 3px solid #ddd;
+    border-bottom: 3px solid var(--border-colour-light);
     display: block;
     margin-bottom: 0.625em;
   }
 
   table td {
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border-colour-light);
     display: block;
     font-size: 0.8em;
     text-align: right;
