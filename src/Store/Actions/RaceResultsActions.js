@@ -7,7 +7,7 @@ import {
 
 //GET: Race result
 export const latestRaceResultAction = () => async (dispatch) => {
-  //http://ergast.com/api/f1/current/last/results.json?callback
+  // ../../../src/assets/data/latestResults.json
 
   try {
     dispatch({
@@ -16,7 +16,7 @@ export const latestRaceResultAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/latestResults.json`,
+      url: `  http://ergast.com/api/f1/current/last/results.json?callback`,
     };
 
     const { data } = await axios.request(options);
