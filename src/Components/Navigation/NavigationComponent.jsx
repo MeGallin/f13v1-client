@@ -36,6 +36,14 @@ const NavigationComponent = () => {
             <NavLink
               onClick={handleNavigation}
               className={(navData) => (navData.isActive ? 'active' : '')}
+              to="/calendar"
+              data-cy="nav-calendar-link"
+            >
+              CALENDAR
+            </NavLink>
+            <NavLink
+              onClick={handleNavigation}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/about"
               data-cy="nav-about-link"
             >
