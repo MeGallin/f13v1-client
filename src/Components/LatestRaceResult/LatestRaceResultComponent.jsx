@@ -4,7 +4,7 @@ import {
   latestRaceResultAction,
   raceResultAction,
 } from '../../Store/Actions/RaceResultsActions';
-import './LatestRaceResultComponent.css';
+import '../../Css/table.css';
 
 import { randomId } from '../../Utils/RandomId';
 import FlagComponent from '../../Common/Flags/FlagComponent';
