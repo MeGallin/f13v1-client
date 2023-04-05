@@ -1,4 +1,4 @@
-import NavigationComponent from '../../Components/Navigation/NavigationComponent';
+import { NavigationComponent } from '../../Components';
 
 const HeaderView = () => {
   return (

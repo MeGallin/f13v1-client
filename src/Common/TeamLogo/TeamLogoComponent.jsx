@@ -1,6 +1,6 @@
 import { teamLogos } from '../../../src/assets/data/teamLogos';
 
-const TeamLogo = ({ team }) => {
+const TeamLogoComponent = ({ team }) => {
   const teamLogo = teamLogos.filter((logo) => {
     if (logo.team === team) {
       return logo;
@@ -24,4 +24,4 @@ const TeamLogo = ({ team }) => {
   );
 };
 
-export default TeamLogo;
+export default TeamLogoComponent;

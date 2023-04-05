@@ -14,6 +14,7 @@ const FlagComponent = ({ nationality }) => {
       alt={nationality}
       style={{
         border: '1px solid black',
+        borderRadius: '8px',
         margin: '2px',
         height: '50px',
       }}

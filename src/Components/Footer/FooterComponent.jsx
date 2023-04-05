@@ -1,4 +1,4 @@
-import DateTime from '../../Common/DateTime/DateTime';
+import { DateTime } from '../../Common';
 import './FooterComponent.css';
 
 const FooterComponent = () => {

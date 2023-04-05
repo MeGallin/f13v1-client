@@ -1,4 +1,4 @@
-import FooterComponent from '../../Components/Footer/FooterComponent';
+import { FooterComponent } from '../../Components';
 
 const FooterView = () => {
   return <FooterComponent />;
