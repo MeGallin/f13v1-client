@@ -1,13 +1,11 @@
+import '../../Css/table.css';
+import './CalendarComponent.css';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { calendarAction } from '../../Store/Actions/CalendarActions';
-
-import './CalendarComponent.css';
-
 import { randomId } from '../../Utils/RandomId';
-import '../../Css/table.css';
+import { FlagComponent, WinnersComponent } from '../../Common';
 import moment from 'moment';
-import FlagComponent from '../../Common/Flags/FlagComponent';
 
 const CalendarComponent = () => {
   const dispatch = useDispatch();
@@ -17,8 +15,8 @@ const CalendarComponent = () => {
 
   useEffect(() => {
     //Dispatch action current year
-    dispatch(calendarAction(2023));
-  }, []);
+    if (!MRData) dispatch(calendarAction(2023));
+  }, [dispatch]);
 
   const calendarData = MRData?.RaceTable?.Races.flatMap((data) => {
     return data;
@@ -36,6 +34,7 @@ const CalendarComponent = () => {
           <>
             <div className="calendar-container ">
               <h1>F1 Season {MRData?.RaceTable?.season}</h1>
+
               <div className="calendar-feature">
                 {calendarData?.map((round) => (
                   <div key={randomId(8)} className="calendar-item">
@@ -53,29 +52,48 @@ const CalendarComponent = () => {
                         />
                       </div>
                       <h3>{round.raceName}</h3>
-                      <dir className="calendar-practice">
-                        <div className="global-flex-wrapper">
-                          1st practice:{' '}
-                          {moment(round.FirstPractice?.date).format('MMMM Do')}{' '}
-                          <sup>{round.FirstPractice?.time}</sup>
-                        </div>
-                        <div className="global-flex-wrapper">
-                          Qualifying:{' '}
-                          {moment(round.Qualifying?.date).format('MMMM Do')}{' '}
-                          <sup>{round.Qualifying?.time}</sup>
-                        </div>
-                        <div className="global-flex-wrapper">
-                          2nd practice:{' '}
-                          {moment(round.SecondPractice?.date).format('MMMM Do')}{' '}
-                          <sup>{round.SecondPractice?.time}</sup>
-                        </div>
-                        <div className="global-flex-wrapper">
-                          3rd practice:{' '}
-                          {moment(round.ThirdPractice?.date).format('MMMM Do')}{' '}
-                          <sup>{round.ThirdPractice?.time}</sup>
-                        </div>
-                      </dir>
-                      Event {moment(round.date).endOf('day').fromNow()}
+                      {moment() > moment(round.date) ? (
+                        <>
+                          <div className="calendar-round-completed">
+                            Over, {moment(round.date).endOf('day').fromNow()}
+                          </div>
+                          <div>
+                            <WinnersComponent round={{ round: round?.round }} />
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <dir className="calendar-practice">
+                            <div className="global-flex-wrapper">
+                              1st practice:{' '}
+                              {moment(round.FirstPractice?.date).format(
+                                'MMMM Do',
+                              )}{' '}
+                              <sup>{round.FirstPractice?.time}</sup>
+                            </div>
+                            <div className="global-flex-wrapper">
+                              Qualifying:{' '}
+                              {moment(round.Qualifying?.date).format('MMMM Do')}{' '}
+                              <sup>{round.Qualifying?.time}</sup>
+                            </div>
+                            <div className="global-flex-wrapper">
+                              2nd practice:{' '}
+                              {moment(round.SecondPractice?.date).format(
+                                'MMMM Do',
+                              )}{' '}
+                              <sup>{round.SecondPractice?.time}</sup>
+                            </div>
+                            <div className="global-flex-wrapper">
+                              3rd practice:{' '}
+                              {moment(round.ThirdPractice?.date).format(
+                                'MMMM Do',
+                              )}{' '}
+                              <sup>{round.ThirdPractice?.time}</sup>
+                            </div>
+                          </dir>
+                          Event: {moment(round.date).endOf('day').fromNow()}
+                        </>
+                      )}
                     </fieldset>
                   </div>
                 ))}

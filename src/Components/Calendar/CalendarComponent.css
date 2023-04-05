@@ -14,8 +14,8 @@
   padding: 1em;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  column-gap: 1rem;
-  row-gap: 1rem;
+  column-gap: 4em;
+  row-gap: 1em;
 }
 
 .calendar-item {
@@ -59,4 +59,9 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0.1em, transparent 0.1em),
     linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
   background-size: 3em 3em;
+}
+
+.calendar-round-completed {
+  font-size: 2rem;
+  color: var(--danger);
 }

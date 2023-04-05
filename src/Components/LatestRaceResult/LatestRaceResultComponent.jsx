@@ -7,10 +7,12 @@ import {
 import '../../Css/table.css';
 
 import { randomId } from '../../Utils/RandomId';
-import FlagComponent from '../../Common/Flags/FlagComponent';
-import TeamLogo from '../../Common/TeamLogo/TeamLogoComponent';
-import UpArrowsComponent from '../../Common/UpArrows/UpArrowsComponent';
-import DownArrowsComponent from '../../Common/DownArrows/DownArrowsComponent';
+import {
+  FlagComponent,
+  TeamLogoComponent,
+  UpArrowsComponent,
+  DownArrowsComponent,
+} from '../../Common';
 
 const LatestRaceResultComponent = () => {
   const dispatch = useDispatch();
@@ -19,9 +21,7 @@ const LatestRaceResultComponent = () => {
   const { loading, error, MRData } = latestRaceResult;
 
   useEffect(() => {
-    if (!MRData) {
-      dispatch(latestRaceResultAction());
-    }
+    if (!MRData) dispatch(latestRaceResultAction());
   }, [dispatch]);
 
   const resultsData = MRData?.RaceTable?.Races.flatMap((data) => {
@@ -104,7 +104,7 @@ const LatestRaceResultComponent = () => {
                           </td>
                           <td>
                             <sub>{el.Constructor?.name}</sub>
-                            <TeamLogo team={el.Constructor?.name} />
+                            <TeamLogoComponent team={el.Constructor?.name} />
                           </td>
                           <td>{el.FastestLap?.lap}</td>
                           <td>
@@ -182,7 +182,7 @@ const LatestRaceResultComponent = () => {
                           </td>
                           <td>
                             <sub>{el.Constructor?.name}</sub>
-                            <TeamLogo team={el.Constructor?.name} />
+                            <TeamLogoComponent team={el.Constructor?.name} />
                           </td>
                           <td>{el.FastestLap?.lap}</td>
                           <td>

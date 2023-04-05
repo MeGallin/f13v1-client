@@ -1,4 +1,4 @@
-import LatestRaceResultComponent from '../../Components/LatestRaceResult/LatestRaceResultComponent';
+import { LatestRaceResultComponent } from '../../Components';
 
 const HomeView = () => {
   return <LatestRaceResultComponent />;
