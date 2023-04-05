@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   latestRaceResultAction,
@@ -45,6 +45,20 @@ const LatestRaceResultComponent = () => {
     return data;
   });
 
+  //Calculate the number of rounds to display the correct number of options
+  const numberOfRounds = resultsData?.map((round) => round.round);
+  const options = (rounds) => {
+    const numberOfOptions = [];
+    for (let i = 1; i <= rounds; i++) {
+      numberOfOptions.push(
+        <option key={randomId(8)} value={i}>
+          {i}
+        </option>,
+      );
+    }
+    return <>{numberOfOptions}</>;
+  };
+
   return (
     <>
       {error || raceResultError ? 'Error comp pending...' : null}
@@ -61,10 +75,8 @@ const LatestRaceResultComponent = () => {
                       <div>
                         {result.season}{' '}
                         <select onChange={handleOnChange}>
-                          <option defaultValue={result.round}>Round</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                          <option defaultValue={numberOfRounds}>Round</option>
+                          {options(numberOfRounds)}
                         </select>
                       </div>
                     </caption>
@@ -85,17 +97,17 @@ const LatestRaceResultComponent = () => {
                           <td>{el.position}</td>
                           <td>{el.points}</td>
                           <td>
-                            <div className="flex-wrapper">
+                            <div className="global-flex-wrapper">
                               <div>
                                 <FlagComponent
                                   nationality={el.Driver?.nationality}
                                 />
                               </div>
                               <div>
-                                <div>
+                                <div style={{ fontWeight: 'bold' }}>
                                   {el.Driver?.givenName} {el.Driver?.familyName}
                                 </div>
-                                <div>
+                                <div className="small-text">
                                   {el.Driver?.code}{' '}
                                   <sub>{el.Driver?.permanentNumber}</sub>
                                 </div>
@@ -103,7 +115,6 @@ const LatestRaceResultComponent = () => {
                             </div>
                           </td>
                           <td>
-                            <sub>{el.Constructor?.name}</sub>
                             <TeamLogoComponent team={el.Constructor?.name} />
                           </td>
                           <td>{el.FastestLap?.lap}</td>
@@ -135,14 +146,10 @@ const LatestRaceResultComponent = () => {
                     <caption>
                       <div> {result.raceName}</div>
                       <div>
-                        {result.season} Round{' '}
+                        {result.season}{' '}
                         <select onChange={handleOnChange}>
-                          <option defaultValue={result.round}>
-                            Select round
-                          </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                          <option defaultValue={numberOfRounds}>Round</option>
+                          {options(numberOfRounds)}
                         </select>
                       </div>
                     </caption>
@@ -163,17 +170,17 @@ const LatestRaceResultComponent = () => {
                           <td>{el.position}</td>
                           <td>{el.points}</td>
                           <td>
-                            <div className="flex-wrapper">
+                            <div className="global-flex-wrapper">
                               <div>
                                 <FlagComponent
                                   nationality={el.Driver?.nationality}
                                 />
                               </div>
                               <div>
-                                <div>
+                                <div style={{ fontWeight: 'bold' }}>
                                   {el.Driver?.givenName} {el.Driver?.familyName}
                                 </div>
-                                <div>
+                                <div className="small-text">
                                   {el.Driver?.code}{' '}
                                   <sub>{el.Driver?.permanentNumber}</sub>
                                 </div>
@@ -181,7 +188,6 @@ const LatestRaceResultComponent = () => {
                             </div>
                           </td>
                           <td>
-                            <sub>{el.Constructor?.name}</sub>
                             <TeamLogoComponent team={el.Constructor?.name} />
                           </td>
                           <td>{el.FastestLap?.lap}</td>

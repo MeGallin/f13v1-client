@@ -14,11 +14,15 @@ const TeamLogoComponent = ({ team }) => {
       src={teamLogo[0]?.path}
       alt={team}
       style={{
-        height: '22px',
+        height: '62px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         margin: '0 auto',
+        border: '1px solid black',
+        borderRadius: '8px',
+        padding: '4px',
+        backgroundColor: 'rgba(255,255,255,0.25)',
       }}
     />
   );
