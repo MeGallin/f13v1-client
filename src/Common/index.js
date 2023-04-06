@@ -4,6 +4,7 @@ import UpArrowsComponent from './UpArrows/UpArrowsComponent';
 import FlagComponent from './Flags/FlagComponent';
 import TeamLogoComponent from './TeamLogo/TeamLogoComponent';
 import WinnersComponent from './Winners/WinnersComponent';
+import DriversComponent from '../Components/Drivers/DriversComponent';
 
 export {
   DateTime,
@@ -12,4 +13,5 @@ export {
   FlagComponent,
   TeamLogoComponent,
   WinnersComponent,
+  DriversComponent,
 };

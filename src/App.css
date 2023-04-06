@@ -53,3 +53,15 @@ fieldset legend {
   display: flex;
   justify-content: space-between;
 }
+
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: var(--border-colour);
+  background-image: linear-gradient(
+    to right,
+    var(--main-font-colour),
+    var(--border-colour),
+    var(--main-font-colour)
+  );
+}

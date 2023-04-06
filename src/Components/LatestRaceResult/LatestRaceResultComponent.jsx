@@ -94,7 +94,7 @@ const LatestRaceResultComponent = () => {
                     <tbody>
                       {result?.Results.map((el) => (
                         <tr key={randomId(8)}>
-                          <td>{el.position}</td>
+                          <td>P {el.position}</td>
                           <td>{el.points}</td>
                           <td>
                             <div className="global-flex-wrapper">
@@ -115,7 +115,7 @@ const LatestRaceResultComponent = () => {
                             </div>
                           </td>
                           <td>
-                            <TeamLogoComponent team={el.Constructor?.name} />
+                            <h3>{el.Constructor?.name}</h3>
                           </td>
                           <td>{el.FastestLap?.lap}</td>
                           <td>
@@ -188,7 +188,7 @@ const LatestRaceResultComponent = () => {
                             </div>
                           </td>
                           <td>
-                            <TeamLogoComponent team={el.Constructor?.name} />
+                            <h3>{el.Constructor?.name}</h3>
                           </td>
                           <td>{el.FastestLap?.lap}</td>
                           <td>

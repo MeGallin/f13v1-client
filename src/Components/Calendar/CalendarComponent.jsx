@@ -18,9 +18,7 @@ const CalendarComponent = () => {
     if (!MRData) dispatch(calendarAction(2023));
   }, [dispatch]);
 
-  const calendarData = MRData?.RaceTable?.Races.flatMap((data) => {
-    return data;
-  });
+  const calendarData = MRData?.RaceTable?.Races.flatMap((data) => data);
 
   return (
     <>

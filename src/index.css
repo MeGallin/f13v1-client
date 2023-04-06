@@ -55,10 +55,10 @@ dd {
 body {
   font-family: 'Signika', sans-serif;
   font-family: 'Comfortaa', cursive;
-  background-image: url('./assets/images/mcLaren.jpg');
+  /* background-image: url('./assets/images/mcLaren.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   background-color: white;
   min-height: 100vh;
   scroll-behavior: smooth;

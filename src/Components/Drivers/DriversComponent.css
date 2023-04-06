@@ -1,0 +1,38 @@
+.drivers-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.drivers-feature {
+  display: grid;
+  padding: 1em;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-gap: 4em;
+  row-gap: 1em;
+}
+
+.drivers-item {
+  color: var(--main-bg-colour);
+  background-color: var(--calendar-bg-colour);
+  border-top: 6px solid var(--danger);
+  border-right: 6px solid var(--danger);
+  border-top-right-radius: 0.6rem;
+  padding: 1em;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+.drivers-name {
+  color: var(--light-orange);
+}
+.drivers-family-name {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.drivers-permanentNumber {
+  color: var(--light-orange);
+  font-size: 2rem;
+  font-weight: bold;
+}
