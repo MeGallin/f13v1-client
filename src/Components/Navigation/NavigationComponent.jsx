@@ -52,6 +52,14 @@ const NavigationComponent = () => {
             <NavLink
               onClick={handleNavigation}
               className={(navData) => (navData.isActive ? 'active' : '')}
+              to="/standings"
+              data-cy="nav-standings-link"
+            >
+              STANDINGS
+            </NavLink>
+            <NavLink
+              onClick={handleNavigation}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/about"
               data-cy="nav-about-link"
             >

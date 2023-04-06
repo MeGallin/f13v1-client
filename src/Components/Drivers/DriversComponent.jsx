@@ -8,8 +8,8 @@ import { FlagComponent } from '../../Common';
 const DriversComponent = () => {
   const dispatch = useDispatch();
 
-  const Drivers = useSelector((state) => state.Drivers);
-  const { loading, error, MRData } = Drivers;
+  const drivers = useSelector((state) => state.drivers);
+  const { loading, error, MRData } = drivers;
 
   const driversData = MRData?.DriverTable?.Drivers.flatMap((data) => data);
 
@@ -45,7 +45,6 @@ const DriversComponent = () => {
                             {driver.familyName}
                           </span>
                         </div>
-
                         <div className="drivers-permanentNumber">
                           {driver.permanentNumber}
                         </div>
