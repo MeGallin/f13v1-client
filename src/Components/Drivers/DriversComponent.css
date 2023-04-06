@@ -32,7 +32,8 @@
   font-size: 2rem;
 }
 .drivers-permanentNumber {
-  color: var(--light-orange);
-  font-size: 2rem;
+  font-family: 'Bungee', cursive;
+  color: var(--border-colour-dark);
+  font-size: 4rem;
   font-weight: bold;
 }

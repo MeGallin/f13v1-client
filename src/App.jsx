@@ -9,6 +9,7 @@ const HomeView = lazy(() => import('./Views/Home/HomeView'));
 const AboutView = lazy(() => import('./Views/About/AboutView'));
 const CalendarView = lazy(() => import('./Views/Calendar/CalendarView'));
 const DriversView = lazy(() => import('./Views/Drivers/DriversView'));
+const StandingsView = lazy(() => import('./Views/Standings/StandingsView'));
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
               <Route path="/about" element={<AboutView />} exact />
               <Route path="/calendar" element={<CalendarView />} exact />
               <Route path="/drivers" element={<DriversView />} exact />
+              <Route path="/standings" element={<StandingsView />} exact />
               <Route path="*" element={<ErrorView />} exact />
             </Routes>
           </div>
