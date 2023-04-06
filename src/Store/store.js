@@ -6,11 +6,13 @@ import {
   raceResultReducer,
 } from './Reducers/RaceResultsReducers';
 import { calendarReducer } from './Reducers/CalendarReducers';
+import { DriversReducer } from './Reducers/DriversReducers';
 
 const reducer = combineReducers({
   latestRaceResult: latestRaceResultReducer,
   raceResult: raceResultReducer,
   calendar: calendarReducer,
+  Drivers: DriversReducer,
 });
 
 const initialState = {};
