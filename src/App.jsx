@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import FooterView from './Views/Footer/FooterView';
 import HeaderView from './Views/Header/HeaderView';
+import TickerComponent from './Common/Ticker/TickerComponent';
 
 const ErrorView = lazy(() => import('./Views/Error/ErrorView'));
 const HomeView = lazy(() => import('./Views/Home/HomeView'));
@@ -16,6 +17,7 @@ function App() {
     <Router>
       <div className="container-fluid">
         <HeaderView />
+
         <Suspense fallback={<div aria-busy="true">Loading please wait…</div>}>
           <div className="content_height_adjuster">
             <Routes>
@@ -27,8 +29,9 @@ function App() {
               <Route path="*" element={<ErrorView />} exact />
             </Routes>
           </div>
-          <FooterView />
         </Suspense>
+        <TickerComponent />
+        <FooterView />
       </div>
     </Router>
   );

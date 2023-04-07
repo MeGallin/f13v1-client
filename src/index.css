@@ -14,9 +14,12 @@
   --success: #14a44d;
   --warning: rgba(240, 173, 78, 1);
   --info: #54b4d3;
-  --header-height: 48px;
-  --footer-height: 24px;
+
   --fieldSet-bg-colour: hsla(0, 0%, 45%, 0.1);
+  --header-height: 30px;
+  --footer-height: 24px;
+  --ticker-height: 1.2em;
+  --ticker-position: var(--header-height);
 }
 /* Box sizing rules */
 *,

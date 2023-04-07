@@ -3,7 +3,7 @@
 }
 
 nav {
-  height: 100%;
+  height: var(--header-height);
   background-color: black;
   display: flex;
   justify-content: space-between;

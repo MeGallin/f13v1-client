@@ -10,6 +10,7 @@ import {
   driversReducer,
   driversStandingsReducer,
 } from './Reducers/DriversReducers';
+import { f1TickerDataReducer } from './Reducers/TickerReducers';
 
 const reducer = combineReducers({
   latestRaceResult: latestRaceResultReducer,
@@ -17,6 +18,7 @@ const reducer = combineReducers({
   calendar: calendarReducer,
   drivers: driversReducer,
   driversStandings: driversStandingsReducer,
+  f1TickerData: f1TickerDataReducer,
 });
 
 const initialState = {};
