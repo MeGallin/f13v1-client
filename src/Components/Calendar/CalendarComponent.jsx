@@ -53,7 +53,7 @@ const CalendarComponent = () => {
                       {moment() > moment(round.date) ? (
                         <>
                           <div className="calendar-round-completed">
-                            Over, {moment(round.date).endOf('day').fromNow()}
+                            Ended, {moment(round.date).endOf('day').fromNow()}
                           </div>
                           <div>
                             <WinnersComponent round={{ round: round?.round }} />

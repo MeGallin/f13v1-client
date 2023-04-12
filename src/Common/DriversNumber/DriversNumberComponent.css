@@ -1,0 +1,5 @@
+.drivers-permanentNumber {
+  font-family: 'Bungee', cursive;
+  color: var(--border-colour-dark);
+  font-weight: bold;
+}

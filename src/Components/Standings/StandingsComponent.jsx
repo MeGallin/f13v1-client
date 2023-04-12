@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { driversStandingsAction } from '../../Store/Actions/DriversActions';
 import { randomId } from '../../Utils/RandomId';
+import { DriverPhotoComponent, DriversNumberComponent } from '../../Common';
 
 const StandingsComponent = () => {
   const dispatch = useDispatch();
@@ -13,8 +14,6 @@ const StandingsComponent = () => {
   const driverStandingsData = MRData?.StandingsTable?.StandingsLists?.map(
     (data) => data,
   );
-
-  console.log(driverStandingsData);
 
   useEffect(() => {
     //Dispatch Action
@@ -30,17 +29,54 @@ const StandingsComponent = () => {
           <span aria-busy="true">...loading</span>
         ) : (
           <>
-            {driverStandingsData?.map((data) => (
-              <div key={randomId(8)}>
-                <h1>{data.season}</h1>
-                {data?.DriverStandings?.map((standings) => (
-                  <div key={randomId(8)}>
-                    {standings.position}:points{standings.points}:wins
-                    {standings.wins}driver:{standings.Driver.code}
-                  </div>
-                ))}
+            <div className="standings-container ">
+              <h1>F1 Season ... {MRData?.StandingsTable?.season}</h1>
+
+              <div className="standings-feature">
+                {driverStandingsData?.map((data) =>
+                  data?.DriverStandings?.map((standings) => (
+                    <div key={randomId(8)} className="standings-item">
+                      <div>
+                        <div className="global-flex-wrapper standing-points">
+                          <div>
+                            <DriversNumberComponent
+                              number={standings.position}
+                              fontSize={3.5}
+                            />
+                          </div>
+                          <div>
+                            <DriverPhotoComponent
+                              driver={standings.Driver.code}
+                            />
+                          </div>
+                          <div>
+                            <div>pts</div>
+                            <DriversNumberComponent
+                              number={standings.points}
+                              fontSize={3.5}
+                            />
+                          </div>
+                        </div>
+                        <hr className="style-one" />
+
+                        <div className="global-flex-wrapper">
+                          <div>{standings.Driver.code}</div>
+                          <div>
+                            {standings.Driver.givenName}{' '}
+                            {standings.Driver.familyName}
+                          </div>
+                          <div>
+                            wins:{' '}
+                            <DriversNumberComponent number={standings.wins} />{' '}
+                          </div>
+                        </div>
+                        <hr className="style-one" />
+                      </div>
+                    </div>
+                  )),
+                )}
               </div>
-            ))}
+            </div>
           </>
         )}
       </fieldset>

@@ -36,6 +36,14 @@ const NavigationComponent = () => {
             <NavLink
               onClick={handleNavigation}
               className={(navData) => (navData.isActive ? 'active' : '')}
+              to="/standings"
+              data-cy="nav-standings-link"
+            >
+              STANDINGS
+            </NavLink>
+            <NavLink
+              onClick={handleNavigation}
+              className={(navData) => (navData.isActive ? 'active' : '')}
               to="/calendar"
               data-cy="nav-calendar-link"
             >
@@ -49,14 +57,7 @@ const NavigationComponent = () => {
             >
               DRIVERS
             </NavLink>
-            <NavLink
-              onClick={handleNavigation}
-              className={(navData) => (navData.isActive ? 'active' : '')}
-              to="/standings"
-              data-cy="nav-standings-link"
-            >
-              STANDINGS
-            </NavLink>
+
             <NavLink
               onClick={handleNavigation}
               className={(navData) => (navData.isActive ? 'active' : '')}

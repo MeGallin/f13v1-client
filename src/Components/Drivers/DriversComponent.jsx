@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { driversAction } from '../../Store/Actions/DriversActions';
 import moment from 'moment';
-import { FlagComponent } from '../../Common';
+import { DriverPhotoComponent, FlagComponent } from '../../Common';
+import DriversNumberComponent from '../../Common/DriversNumber/DriversNumberComponent';
 
 const DriversComponent = () => {
   const dispatch = useDispatch();
@@ -45,13 +46,16 @@ const DriversComponent = () => {
                             {driver.familyName}
                           </span>
                         </div>
-                        <div className="drivers-permanentNumber">
-                          {driver.permanentNumber}
-                        </div>
+
+                        <DriversNumberComponent
+                          number={driver.permanentNumber}
+                          fontSize={3.5}
+                        />
                       </div>
                       <hr className="style-one" />
                       <div className="global-flex-wrapper">
                         <FlagComponent nationality={driver.nationality} />
+                        <DriverPhotoComponent driver={driver.code} />
                         <div>{driver.nationality}</div>
                       </div>
                       <hr className="style-one" />

@@ -52,6 +52,7 @@ fieldset legend {
 .global-flex-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 hr.style-one {
