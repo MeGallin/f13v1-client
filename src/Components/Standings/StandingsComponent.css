@@ -10,16 +10,13 @@
   padding: 1em;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
-  column-gap: 4em;
+  column-gap: 12em;
   row-gap: 1em;
 }
 
 .standings-item {
   color: var(--main-bg-colour);
   background-color: var(--calendar-bg-colour);
-  border-top: 6px solid var(--danger);
-  border-right: 6px solid var(--danger);
-  border-top-right-radius: 0.6rem;
   padding: 1em;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
@@ -33,14 +30,12 @@
   color: var(--calendar-bg-colour);
   border: 1px solid var(--main-bg-colour);
   background-color: var(--main-bg-colour);
-  border-top-right-radius: 0.6rem;
   padding: 0.2em;
 }
 
 .standings-practice {
   color: var(--calendar-bg-colour);
   background-color: var(--main-bg-colour);
-  border-top-right-radius: 0.6rem;
   font-size: 0.9rem;
   padding: 0.4em;
 }
@@ -69,5 +64,12 @@
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.2em;
-  border-top-right-radius: 0.6rem;
+  border-left: 6px solid var(--danger);
+}
+
+.standings-image-wrapper {
+  border: var(--border-colour) 1px solid;
+  border-top-right-radius: var(--image-border-radius);
+  border-bottom-left-radius: var(--image-border-radius);
+  width: 30%;
 }

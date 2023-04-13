@@ -14,16 +14,13 @@
   padding: 1em;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  column-gap: 4em;
+  column-gap: 12em;
   row-gap: 1em;
 }
 
 .calendar-item {
   color: var(--main-bg-colour);
   background-color: var(--calendar-bg-colour);
-  border-top: 6px solid var(--danger);
-  border-right: 6px solid var(--danger);
-  border-top-right-radius: 0.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,14 +34,12 @@
   color: var(--calendar-bg-colour);
   border: 1px solid var(--main-bg-colour);
   background-color: var(--main-bg-colour);
-  border-top-right-radius: 0.6rem;
   padding: 0.2em;
 }
 
 .calendar-practice {
   color: var(--calendar-bg-colour);
   background-color: var(--main-bg-colour);
-  border-top-right-radius: 0.6rem;
   font-size: 0.9rem;
   padding: 0.4em;
 }

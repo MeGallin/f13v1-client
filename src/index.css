@@ -14,6 +14,7 @@
   --success: #14a44d;
   --warning: rgba(240, 173, 78, 1);
   --info: #54b4d3;
+  --image-border-radius: 32px;
 
   --fieldSet-bg-colour: hsla(0, 0%, 45%, 0.1);
   --header-height: 30px;

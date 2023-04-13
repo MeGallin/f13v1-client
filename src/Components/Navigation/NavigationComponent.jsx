@@ -65,7 +65,7 @@ const NavigationComponent = () => {
               to="/round-up"
               data-cy="nav-roundUp-link"
             >
-              ROUND UP
+              SPORT
             </NavLink>
 
             <NavLink

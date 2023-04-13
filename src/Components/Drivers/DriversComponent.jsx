@@ -55,7 +55,9 @@ const DriversComponent = () => {
                       <hr className="style-one" />
                       <div className="global-flex-wrapper">
                         <FlagComponent nationality={driver.nationality} />
-                        <DriverPhotoComponent driver={driver.code} />
+                        <div className="drivers-image-wrapper">
+                          <DriverPhotoComponent driver={driver.code} />
+                        </div>
                         <div>{driver.nationality}</div>
                       </div>
                       <hr className="style-one" />

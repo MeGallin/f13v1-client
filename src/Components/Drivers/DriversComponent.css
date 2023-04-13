@@ -10,16 +10,13 @@
   padding: 1em;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  column-gap: 4em;
+  column-gap: 12em;
   row-gap: 1em;
 }
 
 .drivers-item {
   color: var(--main-bg-colour);
   background-color: var(--calendar-bg-colour);
-  border-top: 6px solid var(--danger);
-  border-right: 6px solid var(--danger);
-  border-top-right-radius: 0.6rem;
   padding: 1em;
   box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.25);
   transition: all 0.2s;
@@ -30,4 +27,11 @@
 .drivers-family-name {
   font-weight: bold;
   font-size: 2rem;
+}
+
+.drivers-image-wrapper {
+  border: var(--border-colour) 1px solid;
+  border-top-right-radius: var(--image-border-radius);
+  border-bottom-left-radius: var(--image-border-radius);
+  width: 30%;
 }

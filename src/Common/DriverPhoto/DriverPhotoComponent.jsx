@@ -15,8 +15,10 @@ const DriverPhotoComponent = ({ driver }) => {
         src={driverPhotoSrc[0]?.path}
         alt={driver}
         style={{
-          borderTopRightRadius: '12px',
+          borderTopRightRadius: '32px',
+          borderBottomLeftRadius: '32px',
           padding: '4px',
+          backgroundColor: 'white',
         }}
       />
     </>

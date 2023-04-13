@@ -39,12 +39,13 @@ const StandingsComponent = () => {
                       <div>
                         <div className="global-flex-wrapper standing-points">
                           <div>
+                            <div>p</div>
                             <DriversNumberComponent
                               number={standings.position}
                               fontSize={3.5}
                             />
                           </div>
-                          <div>
+                          <div className="standings-image-wrapper">
                             <DriverPhotoComponent
                               driver={standings.Driver.code}
                             />
@@ -71,6 +72,7 @@ const StandingsComponent = () => {
                           </div>
                         </div>
                         <hr className="style-one" />
+                        <div>Events won to follow</div>
                       </div>
                     </div>
                   )),
