@@ -23,7 +23,7 @@ const NavigationComponent = () => {
           <div className="line"></div>
         </div>
 
-        <ul className={!toggleHamburger ? 'nav_links' : 'nav_links open'}>
+        <ul className={!toggleHamburger ? 'nav_links open' : 'nav_links'}>
           <li className="link">
             <NavLink
               onClick={handleNavigation}

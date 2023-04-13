@@ -11,11 +11,15 @@ nav {
 .nav_links {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   list-style: none;
   width: 50%;
   height: 100%;
   float: right;
+}
+.link {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .link a {
   color: var(--main-font-colour);
@@ -62,9 +66,11 @@ nav {
     background-color: var(--main-bg-colour);
     height: 100vh;
     width: 100%;
-    flex-direction: column;
     clip-path: circle(10px at 100% -10%);
     transition: all 1s ease-out;
+  }
+  .link {
+    flex-direction: column;
   }
   .nav_links.open {
     clip-path: circle(1400px at 100% -10%);
