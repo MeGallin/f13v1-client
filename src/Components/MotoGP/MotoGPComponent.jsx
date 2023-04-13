@@ -30,7 +30,7 @@ const MotoGPComponent = () => {
             <div key={item.guid}>
               <h3>{item.title}</h3>
               <p>{item.pubDate}</p>
-              <p>{item.description.split('<a')[0].split('<br>')}</p>
+              <div dangerouslySetInnerHTML={{ __html: item.description }} />
             </div>
           ))}
         </>

@@ -44,7 +44,7 @@ export const motoGPDataAction = () => async (dispatch) => {
 //GET: Rugby data
 export const rugbyDataAction = () => async (dispatch) => {
   // ../../../src/assets/data/motoGPData.json
-  //   https://api.rss2json.com/v1/api.json?rss_url=https://www.motorsport.com/rss/motogp/news/
+  //   https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/rugby/news
 
   try {
     dispatch({
@@ -107,7 +107,7 @@ export const sportDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/motoGPData.json`,
+      url: `https://api.rss2json.com/v1/api.json?rss_url=https://www.theguardian.com/uk/sport/rss`,
     };
 
     const { data } = await axios.request(options);
