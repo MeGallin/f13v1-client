@@ -49,6 +49,7 @@ const NavigationComponent = () => {
             >
               CALENDAR
             </NavLink>
+
             <NavLink
               onClick={handleNavigation}
               className={(navData) => (navData.isActive ? 'active' : '')}
@@ -56,6 +57,15 @@ const NavigationComponent = () => {
               data-cy="nav-drivers-link"
             >
               DRIVERS
+            </NavLink>
+
+            <NavLink
+              onClick={handleNavigation}
+              className={(navData) => (navData.isActive ? 'active' : '')}
+              to="/round-up"
+              data-cy="nav-roundUp-link"
+            >
+              ROUND UP
             </NavLink>
 
             <NavLink
