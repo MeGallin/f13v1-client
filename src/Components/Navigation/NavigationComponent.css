@@ -4,7 +4,7 @@
 
 nav {
   height: var(--header-height);
-  background-color: black;
+  background-color: var(--main-bg-colour);
   display: flex;
   justify-content: space-between;
 }

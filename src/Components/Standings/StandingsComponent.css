@@ -64,7 +64,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   padding: 0.2em;
-  border-left: 6px solid var(--danger);
+  border-left: 8px solid var(--danger);
   background-color: var(--border-colour);
   opacity: 0.8;
   background-image: repeating-radial-gradient(
