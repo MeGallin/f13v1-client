@@ -1,9 +1,13 @@
-import './StandingsComponent.css';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { driversStandingsAction } from '../../Store/Actions/DriversActions';
-import { randomId } from '../../Utils/RandomId';
-import { DriverPhotoComponent, DriversNumberComponent } from '../../Common';
+import "./StandingsComponent.css";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { driversStandingsAction } from "../../Store/Actions/DriversActions";
+import { randomId } from "../../Utils/RandomId";
+import {
+  DriverPhotoComponent,
+  DriversNumberComponent,
+  ImageSliderComponent,
+} from "../../Common";
 
 const StandingsComponent = () => {
   const dispatch = useDispatch();
@@ -12,7 +16,7 @@ const StandingsComponent = () => {
   const { loading, error, MRData } = driversStandings;
 
   const driverStandingsData = MRData?.StandingsTable?.StandingsLists?.map(
-    (data) => data,
+    (data) => data
   );
 
   useEffect(() => {
@@ -21,7 +25,7 @@ const StandingsComponent = () => {
   }, [dispatch]);
   return (
     <>
-      {error ? 'Error comp pending...' : null}
+      {error ? "Error comp pending..." : null}
 
       <fieldset className="fieldSet">
         <legend></legend>
@@ -30,7 +34,7 @@ const StandingsComponent = () => {
         ) : (
           <>
             <div className="standings-container">
-              <div className="standings-heading-wrapper"></div>
+              <ImageSliderComponent />
 
               <div className="standings-feature">
                 {driverStandingsData?.map((data) =>
@@ -64,19 +68,19 @@ const StandingsComponent = () => {
                         <div className="global-flex-wrapper">
                           <div>{standings.Driver.code}</div>
                           <div>
-                            {standings.Driver.givenName}{' '}
+                            {standings.Driver.givenName}{" "}
                             {standings.Driver.familyName}
                           </div>
                           <div>
-                            wins:{' '}
-                            <DriversNumberComponent number={standings.wins} />{' '}
+                            wins:{" "}
+                            <DriversNumberComponent number={standings.wins} />{" "}
                           </div>
                         </div>
                         <hr className="style-one" />
                         <div>Events won to follow</div>
                       </div>
                     </div>
-                  )),
+                  ))
                 )}
               </div>
             </div>

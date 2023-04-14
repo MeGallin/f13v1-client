@@ -1,0 +1,9 @@
+.image-slider-wrapper {
+  background-image: url("../../assets/images/mercedes.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--main-font-colour);
+  text-align: center;
+  height: 6em;
+}
