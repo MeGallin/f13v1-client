@@ -5,6 +5,16 @@
 .standings-container {
 }
 
+.standings-heading-wrapper {
+  background-image: url('../../assets/images/mercedes.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--main-font-colour);
+  text-align: center;
+  height: 6em;
+}
+
 .standings-feature {
   display: grid;
   padding: 1em;
@@ -65,6 +75,14 @@
   font-size: 1.5rem;
   padding: 0.2em;
   border-left: 6px solid var(--danger);
+  background-color: var(--border-colour);
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      var(--border-colour) 10px
+    ),
+    repeating-linear-gradient(var(--border-colour), var(--border-colour-light));
 }
 
 .standings-image-wrapper {
