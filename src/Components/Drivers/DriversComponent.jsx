@@ -1,10 +1,14 @@
-import './DriversComponent.css';
-import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { driversAction } from '../../Store/Actions/DriversActions';
-import moment from 'moment';
-import { DriverPhotoComponent, FlagComponent } from '../../Common';
-import DriversNumberComponent from '../../Common/DriversNumber/DriversNumberComponent';
+import "./DriversComponent.css";
+import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { driversAction } from "../../Store/Actions/DriversActions";
+import moment from "moment";
+import {
+  DriverPhotoComponent,
+  FlagComponent,
+  ImageSliderComponent,
+} from "../../Common";
+import DriversNumberComponent from "../../Common/DriversNumber/DriversNumberComponent";
 
 const DriversComponent = () => {
   const dispatch = useDispatch();
@@ -23,7 +27,7 @@ const DriversComponent = () => {
 
   return (
     <>
-      {error ? 'Error comp pending...' : null}
+      {error ? "Error comp pending..." : null}
 
       <fieldset className="fieldSet">
         <legend></legend>
@@ -32,16 +36,18 @@ const DriversComponent = () => {
         ) : (
           <>
             <div className="drivers-container">
-              <h1>Drivers {MRData?.DriverTable?.season}</h1>
+              <ImageSliderComponent />
+
               <div className="drivers-feature">
                 {driversData?.map((driver) => (
                   <div key={driver.driverId} className="drivers-item">
+                    <h3>Drivers {MRData?.DriverTable?.season}</h3>
                     <div>
                       <div className="global-flex-wrapper">
                         <div>
                           <span className="drivers-name">
                             {driver.givenName}
-                          </span>{' '}
+                          </span>{" "}
                           <span className="drivers-family-name">
                             {driver.familyName}
                           </span>
@@ -62,7 +68,7 @@ const DriversComponent = () => {
                       </div>
                       <hr className="style-one" />
                       <div>
-                        {moment().diff(driver.dateOfBirth, 'years')} years old.
+                        {moment().diff(driver.dateOfBirth, "years")} years old.
                       </div>
                     </div>
                   </div>
