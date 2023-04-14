@@ -1,5 +1,9 @@
 footer {
   height: var(--footer-height);
   font-size: 0.8rem;
-  background-color: yellow;
+  background-color: var(--main-bg-colour);
+  color: var(--main-font-colour);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
