@@ -1,5 +1,4 @@
-import "./ImageSliderComponent.css";
-import { sliderImages } from "./sliderImages";
+import { sliderImages } from './sliderImages';
 
 const ImageSliderComponent = () => {
   const randomNumber = () => {
@@ -11,13 +10,26 @@ const ImageSliderComponent = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${img})`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        height: "6em",
+        border: '1px solid rgba(200,200,200,0.5)',
+        borderTopRightRadius: '32px',
+        borderBottomLeftRadius: '32px',
       }}
-    ></div>
+    >
+      <div
+        style={{
+          backgroundImage: `url(${img})`,
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          margin: '4px',
+          backgroundColor: 'white',
+          border: '1px solid rgba(200,200,200,0.5)',
+          borderTopRightRadius: '32px',
+          borderBottomLeftRadius: '32px',
+          height: '6em',
+        }}
+      ></div>
+    </div>
   );
 };
 
