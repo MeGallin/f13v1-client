@@ -15,10 +15,7 @@ const DriversComponent = () => {
 
   const drivers = useSelector((state) => state.drivers);
   const { loading, error, MRData } = drivers;
-
   const driversData = MRData?.DriverTable?.Drivers.flatMap((data) => data);
-
-  console.log(MRData?.DriverTable);
 
   useEffect(() => {
     //Dispatch Action for Drivers

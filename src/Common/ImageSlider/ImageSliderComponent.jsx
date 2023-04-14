@@ -15,6 +15,7 @@ const ImageSliderComponent = () => {
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         height: '6em',
+        borderBottom: '6px solid white',
       }}
     ></div>
   );
