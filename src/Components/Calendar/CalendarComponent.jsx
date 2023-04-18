@@ -89,7 +89,7 @@ const CalendarComponent = () => {
                             {moment(round.date).endOf('day').fromNow()}
                           </div>
                           <h3>Podium</h3>
-                          <div>
+                          <div className="calendar-practice ">
                             {errorDataRound1 ? 'Error comp pending...' : null}
                             {LoadingDataRound1 ? (
                               <span aria-busy="true">...loading</span>
@@ -97,7 +97,7 @@ const CalendarComponent = () => {
                               winnersRoundOne.data?.map((winner) => (
                                 <div
                                   key={randomId(8)}
-                                  className="global-flex-wrapper calendar-practice"
+                                  className="global-flex-wrapper "
                                 >
                                   <div>P {winner.position}</div>
                                   <div> {winner.driver}</div>
@@ -113,7 +113,7 @@ const CalendarComponent = () => {
                               winnersRoundTwo.data?.map((winner) => (
                                 <div
                                   key={randomId(8)}
-                                  className="global-flex-wrapper calendar-practice"
+                                  className="global-flex-wrapper "
                                 >
                                   <div>P {winner.position}</div>
                                   <div> {winner.driver}</div>
@@ -129,7 +129,7 @@ const CalendarComponent = () => {
                               winnersRoundThree.data?.map((winner) => (
                                 <div
                                   key={randomId(8)}
-                                  className="global-flex-wrapper calendar-practice"
+                                  className="global-flex-wrapper "
                                 >
                                   <div>P {winner.position}</div>
                                   <div> {winner.driver}</div>

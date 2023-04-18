@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 :root {
   --main-bg-colour: rgba(32, 32, 32, 1);
   --secondary-bg-colour: rgba(255, 99, 0, 1);
@@ -17,10 +17,10 @@
   --image-border-radius: 32px;
 
   --fieldSet-bg-colour: hsla(0, 0%, 45%, 0.1);
-  --header-height: 30px;
+  --header-height: 28px;
   --footer-height: 24px;
-  --ticker-height: 24px;
-  --ticker-position: 20px;
+  --ticker-height: 22px;
+  --ticker-position: 22px;
 }
 /* Box sizing rules */
 *,
@@ -58,8 +58,8 @@ dd {
 
 /* Set core body defaults */
 body {
-  font-family: "Signika", sans-serif;
-  font-family: "Comfortaa", cursive;
+  font-family: 'Signika', sans-serif;
+  font-family: 'Comfortaa', cursive;
   /* background-image: url('./assets/images/mcLaren.jpg');
   background-position: center;
   background-repeat: no-repeat;

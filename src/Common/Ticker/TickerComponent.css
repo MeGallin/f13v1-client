@@ -22,7 +22,8 @@
 }
 .ticker-wrapper {
   position: fixed;
-  bottom: 40px;
+  bottom: var(--footer-height);
+  bottom: var(--ticker-position);
   width: 100%;
   overflow: hidden;
   height: var(--ticker-height);
