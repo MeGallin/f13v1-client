@@ -12,6 +12,7 @@ import {
   TeamLogoComponent,
   UpArrowsComponent,
   DownArrowsComponent,
+  LoadingSpinnerComponent,
 } from '../../Common';
 
 const LatestRaceResultComponent = () => {
@@ -63,7 +64,10 @@ const LatestRaceResultComponent = () => {
     <>
       {error || raceResultError ? 'Error comp pending...' : null}
       {loading || raceResultLoading ? (
-        <span aria-busy="true">...loading</span>
+        <span aria-busy="true">
+          {' '}
+          <LoadingSpinnerComponent />
+        </span>
       ) : (
         <>
           {!resultData

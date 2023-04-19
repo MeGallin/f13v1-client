@@ -7,6 +7,7 @@ import {
   DriverPhotoComponent,
   FlagComponent,
   ImageSliderComponent,
+  LoadingSpinnerComponent,
 } from '../../Common';
 import DriversNumberComponent from '../../Common/DriversNumber/DriversNumberComponent';
 
@@ -29,7 +30,10 @@ const DriversComponent = () => {
       <fieldset className="fieldSet">
         <legend></legend>
         {loading ? (
-          <span aria-busy="true">...loading</span>
+          <span aria-busy="true">
+            {' '}
+            <LoadingSpinnerComponent />
+          </span>
         ) : (
           <>
             <div className="drivers-container">

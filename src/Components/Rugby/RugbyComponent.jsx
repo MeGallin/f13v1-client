@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { rugbyDataAction } from '../../Store/Actions/RoundUp';
+import { LoadingSpinnerComponent } from '../../Common';
 
 const RugbyComponent = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ const RugbyComponent = () => {
     <>
       {!success ? 'Error comp pending...' : null}
       {loading ? (
-        <span aria-busy="true">...loading</span>
+        <span aria-busy="true">
+          {' '}
+          <LoadingSpinnerComponent />
+        </span>
       ) : (
         <>
           <h3>Rugby News</h3>
