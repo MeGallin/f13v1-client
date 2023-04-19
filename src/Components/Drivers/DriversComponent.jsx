@@ -26,7 +26,7 @@ const DriversComponent = () => {
   return (
     <>
       {error ? 'Error comp pending...' : null}
-      <ImageSliderComponent />
+      <ImageSliderComponent text={MRData?.DriverTable?.season} />
       <fieldset className="fieldSet">
         <legend></legend>
         {loading ? (
@@ -40,7 +40,6 @@ const DriversComponent = () => {
               <div className="drivers-feature">
                 {driversData?.map((driver) => (
                   <div key={driver.driverId} className="drivers-item">
-                    <h3>Drivers {MRData?.DriverTable?.season}</h3>
                     <div>
                       <div className="global-flex-wrapper">
                         <div>

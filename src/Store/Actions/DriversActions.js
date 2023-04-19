@@ -12,7 +12,7 @@ import {
 export const driversAction = (year) => async (dispatch) => {
   // ../../../src/assets/data/drivers.json
   //   https://ergast.com/api/f1/2023/drivers.json?callback
-  console.log(year);
+
   try {
     dispatch({
       type: DRIVERS_REQUEST,
@@ -39,8 +39,7 @@ export const driversAction = (year) => async (dispatch) => {
 export const driversStandingsAction = (year, round) => async (dispatch) => {
   // ../../../src/assets/data/drivers.json
   //   https://ergast.com/api/f1/2023/3/driverStandings.json?callback
-  console.log(year);
-  console.log(round);
+
   try {
     dispatch({
       type: DRIVERS_STANDINGS_REQUEST,

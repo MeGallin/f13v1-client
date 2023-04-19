@@ -57,7 +57,7 @@ const CalendarComponent = () => {
   return (
     <>
       {error ? 'Error comp pending...' : null}
-      <ImageSliderComponent />
+      <ImageSliderComponent text={MRData?.RaceTable?.season} />
       <fieldset className="fieldSet">
         <legend></legend>
         {loading ? (
@@ -71,7 +71,6 @@ const CalendarComponent = () => {
                 {calendarData?.map((round) => (
                   <div key={randomId(8)} className="calendar-item">
                     <fieldset className="fieldSet ">
-                      <h3>F1 Season {MRData?.RaceTable?.season}</h3>
                       <legend>Round {round.round}</legend>
                       <div className="global-flex-wrapper">
                         <div>
@@ -84,6 +83,7 @@ const CalendarComponent = () => {
                           nationality={round.Circuit?.Location?.country}
                         />
                       </div>
+                      <hr className="style-one" />
                       <h3>{round.raceName}</h3>
                       {moment() > moment(round.date) ? (
                         <>
@@ -91,8 +91,9 @@ const CalendarComponent = () => {
                             Event ended,{' '}
                             {moment(round.date).endOf('day').fromNow()}
                           </div>
-                          <h3>Podium</h3>
+                          <hr className="style-one" />
 
+                          <h3>Podium</h3>
                           <div className="calendar-practice ">
                             {errorDataRound1 ? 'Error comp pending...' : null}
                             {LoadingDataRound1 ? (

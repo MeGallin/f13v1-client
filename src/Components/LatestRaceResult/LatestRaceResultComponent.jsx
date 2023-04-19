@@ -9,7 +9,6 @@ import '../../Css/table.css';
 import { randomId } from '../../Utils/RandomId';
 import {
   FlagComponent,
-  TeamLogoComponent,
   UpArrowsComponent,
   DownArrowsComponent,
   LoadingSpinnerComponent,
@@ -75,8 +74,26 @@ const LatestRaceResultComponent = () => {
                 <div key={randomId(8)}>
                   <table>
                     <caption>
-                      <div> {result.raceName}</div>
-                      <div>
+                      <div
+                        style={{
+                          backgroundColor: 'white',
+                          display: 'inline',
+                          padding: '0.2em',
+                          color: 'black',
+                        }}
+                      >
+                        {' '}
+                        {result.raceName}
+                      </div>
+                      <br />
+                      <div
+                        style={{
+                          backgroundColor: 'white',
+                          display: 'inline',
+                          padding: '0.2em',
+                          color: 'black',
+                        }}
+                      >
                         {result.season}{' '}
                         <select onChange={handleOnChange}>
                           <option defaultValue={numberOfRounds}>Round</option>

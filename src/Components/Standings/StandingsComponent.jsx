@@ -27,7 +27,7 @@ const StandingsComponent = () => {
   return (
     <>
       {error ? 'Error comp pending...' : null}
-      <ImageSliderComponent />
+      <ImageSliderComponent text={MRData?.StandingsTable?.season} />
       <fieldset className="fieldSet">
         <legend></legend>
         {loading ? (
@@ -42,7 +42,6 @@ const StandingsComponent = () => {
                 {driverStandingsData?.map((data) =>
                   data?.DriverStandings?.map((standings) => (
                     <div key={randomId(8)} className="standings-item">
-                      <h3>SEASON {MRData?.StandingsTable?.season}</h3>
                       <div>
                         <div className="global-flex-wrapper standing-points">
                           <div>
