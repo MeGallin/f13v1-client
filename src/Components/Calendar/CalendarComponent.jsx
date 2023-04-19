@@ -12,6 +12,7 @@ import { randomId } from '../../Utils/RandomId';
 import {
   FlagComponent,
   ImageSliderComponent,
+  LoadingSpinnerComponent,
   WinnersComponent,
 } from '../../Common';
 import moment from 'moment';
@@ -60,7 +61,9 @@ const CalendarComponent = () => {
       <fieldset className="fieldSet">
         <legend></legend>
         {loading ? (
-          <span aria-busy="true">...loading</span>
+          <span aria-busy="true">
+            <LoadingSpinnerComponent />
+          </span>
         ) : (
           <>
             <div className="calendar-container ">
@@ -89,10 +92,13 @@ const CalendarComponent = () => {
                             {moment(round.date).endOf('day').fromNow()}
                           </div>
                           <h3>Podium</h3>
+
                           <div className="calendar-practice ">
                             {errorDataRound1 ? 'Error comp pending...' : null}
                             {LoadingDataRound1 ? (
-                              <span aria-busy="true">...loading</span>
+                              <span aria-busy="true">
+                                <LoadingSpinnerComponent />
+                              </span>
                             ) : round?.round === '1' ? (
                               winnersRoundOne.data?.map((winner) => (
                                 <div
@@ -108,7 +114,9 @@ const CalendarComponent = () => {
 
                             {errorDataRound2 ? 'Error comp pending...' : null}
                             {LoadingDataRound2 ? (
-                              <span aria-busy="true">...loading</span>
+                              <span aria-busy="true">
+                                <LoadingSpinnerComponent />
+                              </span>
                             ) : round?.round === '2' ? (
                               winnersRoundTwo.data?.map((winner) => (
                                 <div
@@ -124,7 +132,9 @@ const CalendarComponent = () => {
 
                             {errorDataRound3 ? 'Error comp pending...' : null}
                             {LoadingDataRound3 ? (
-                              <span aria-busy="true">...loading</span>
+                              <span aria-busy="true">
+                                <LoadingSpinnerComponent />
+                              </span>
                             ) : round?.round === '3' ? (
                               winnersRoundThree.data?.map((winner) => (
                                 <div

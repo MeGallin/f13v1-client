@@ -4,6 +4,7 @@ import './App.css';
 import FooterView from './Views/Footer/FooterView';
 import HeaderView from './Views/Header/HeaderView';
 import TickerComponent from './Common/Ticker/TickerComponent';
+import { LoadingSpinnerComponent } from './Common';
 
 const ErrorView = lazy(() => import('./Views/Error/ErrorView'));
 const HomeView = lazy(() => import('./Views/Home/HomeView'));
@@ -19,7 +20,14 @@ function App() {
       <div className="container-fluid">
         <HeaderView />
 
-        <Suspense fallback={<div aria-busy="true">Loading please wait…</div>}>
+        <Suspense
+          fallback={
+            <div aria-busy="true">
+              {' '}
+              <LoadingSpinnerComponent />
+            </div>
+          }
+        >
           <div className="content_height_adjuster">
             <Routes>
               <Route path="/" element={<HomeView />} exact />

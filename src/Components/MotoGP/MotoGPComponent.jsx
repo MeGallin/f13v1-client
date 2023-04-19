@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motoGPDataAction } from '../../Store/Actions/RoundUp';
+import { LoadingSpinnerComponent } from '../../Common';
 
 const MotoGPComponent = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,10 @@ const MotoGPComponent = () => {
     <>
       {!success ? 'Error comp pending...' : null}
       {loading ? (
-        <span aria-busy="true">...loading</span>
+        <span aria-busy="true">
+          {' '}
+          <LoadingSpinnerComponent />
+        </span>
       ) : (
         <>
           <h3>MotoGP News</h3>

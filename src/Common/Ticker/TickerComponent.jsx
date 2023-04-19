@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { f1TickerDataAction } from '../../Store/Actions/TickerActions';
 import { randomId } from '../../Utils/RandomId';
+import LoadingSpinnerComponent from '../LoadingSpinner/LoadingSpinnerComponent';
 
 const TickerComponent = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,10 @@ const TickerComponent = () => {
     <>
       {!success ? 'Error comp pending...' : null}
       {loading ? (
-        <span aria-busy="true">...loading</span>
+        <span aria-busy="true">
+          {' '}
+          <LoadingSpinnerComponent />
+        </span>
       ) : (
         <div className="ticker-wrapper">
           <div className="ticker">
