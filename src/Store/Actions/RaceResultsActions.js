@@ -20,7 +20,7 @@ export const latestRaceResultAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/latestResults.json`,
+      url: `http://ergast.com/api/f1/current/last/results.json?callback`,
     };
 
     const { data } = await axios.request(options);
@@ -40,7 +40,7 @@ export const latestRaceResultAction = () => async (dispatch) => {
 export const raceResultAction = (round) => async (dispatch) => {
   // https://ergast.com/api/f1/2023/${round}/results.json?callback
   // ../../../src/assets/data/latestResults.json
-  console.log('action', round);
+
   try {
     dispatch({
       type: RACE_RESULT_REQUEST,
@@ -48,7 +48,7 @@ export const raceResultAction = (round) => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/latestResults.json`,
+      url: `https://ergast.com/api/f1/2023/${round}/results.json?callback`,
     };
 
     const { data } = await axios.request(options);

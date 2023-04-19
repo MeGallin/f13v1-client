@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   CALENDAR_FAILURE,
   CALENDAR_REQUEST,
@@ -12,7 +12,7 @@ import {
   WINNERS_ROUND_TWO_FAILURE,
   WINNERS_ROUND_TWO_REQUEST,
   WINNERS_ROUND_TWO_SUCCESS,
-} from "../Constants/CalendarConstants";
+} from '../Constants/CalendarConstants';
 
 //GET: Race result
 export const calendarAction = (year) => async (dispatch) => {
@@ -25,8 +25,8 @@ export const calendarAction = (year) => async (dispatch) => {
     });
 
     const options = {
-      method: "GET",
-      url: `../../../src/assets/data/calendar.json`,
+      method: 'GET',
+      url: `https://ergast.com/api/f1/${year}.json?callback`,
     };
 
     const { data } = await axios.request(options);
@@ -49,7 +49,7 @@ export const winnersRoundOneAction = (round) => async (dispatch) => {
       type: WINNERS_ROUND_ONE_REQUEST,
     });
     const options = {
-      method: "GET",
+      method: 'GET',
       url: `https://f1-three.onrender.com/api/winners/2023/${round}`,
     };
     const { data } = await axios.request(options);
@@ -72,7 +72,7 @@ export const winnersRoundTwoAction = (round) => async (dispatch) => {
       type: WINNERS_ROUND_TWO_REQUEST,
     });
     const options = {
-      method: "GET",
+      method: 'GET',
       url: `https://f1-three.onrender.com/api/winners/2023/${round}`,
     };
     const { data } = await axios.request(options);
@@ -94,7 +94,7 @@ export const winnersRoundThreeAction = (round) => async (dispatch) => {
       type: WINNERS_ROUND_THREE_REQUEST,
     });
     const options = {
-      method: "GET",
+      method: 'GET',
       url: `https://f1-three.onrender.com/api/winners/2023/${round}`,
     };
     const { data } = await axios.request(options);

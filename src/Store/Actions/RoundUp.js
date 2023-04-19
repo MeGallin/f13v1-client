@@ -26,7 +26,7 @@ export const motoGPDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/motoGPData.json`,
+      url: ` https://api.rss2json.com/v1/api.json?rss_url=https://www.motorsport.com/rss/motogp/news/`,
     };
 
     const { data } = await axios.request(options);
@@ -53,7 +53,7 @@ export const rugbyDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/motoGPData.json`,
+      url: `https://api.rss2json.com/v1/api.json?rss_url=https://www.espn.com/espn/rss/rugby/news`,
     };
 
     const { data } = await axios.request(options);
@@ -80,7 +80,7 @@ export const footballDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/motoGPData.json`,
+      url: `https://api.rss2json.com/v1/api.json?rss_url=https://www.motorsport.com/rss/motogp/news/`,
     };
 
     const { data } = await axios.request(options);
@@ -98,7 +98,6 @@ export const footballDataAction = () => async (dispatch) => {
 //GET: Sport i General data
 export const sportDataAction = () => async (dispatch) => {
   // ../../../src/assets/data/motoGPData.json
-  //   https://api.rss2json.com/v1/api.json?rss_url=https://www.motorsport.com/rss/motogp/news/
 
   try {
     dispatch({
