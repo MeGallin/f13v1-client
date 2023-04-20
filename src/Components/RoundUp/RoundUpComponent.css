@@ -7,7 +7,7 @@
 }
 
 .box {
-  border: 4px solid var(--border-colour-light);
+  border: 8px solid var(--border-colour-light);
   max-height: 100%;
   overflow-y: scroll;
   padding: 0.2em;

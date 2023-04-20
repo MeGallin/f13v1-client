@@ -20,7 +20,7 @@ export const driversAction = (year) => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/drivers.json`,
+      url: `https://ergast.com/api/f1/2023/drivers.json?callback`,
     };
 
     const { data } = await axios.request(options);
@@ -47,7 +47,7 @@ export const driversStandingsAction = (year, round) => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/driverStandings.json`,
+      url: `https://ergast.com/api/f1/2023/3/driverStandings.json?callback`,
     };
 
     const { data } = await axios.request(options);

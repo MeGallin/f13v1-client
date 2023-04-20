@@ -17,7 +17,7 @@ export const f1TickerDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `../../../src/assets/data/f1TickerData.json`,
+      url: `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.autosport.com%2Frss%2Ffeed%2Ff1`,
     };
 
     const { data } = await axios.request(options);
