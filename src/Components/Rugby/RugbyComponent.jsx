@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { rugbyDataAction } from '../../Store/Actions/RoundUp';
 import { LoadingSpinnerComponent } from '../../Common';
+import moment from 'moment';
 
 const RugbyComponent = () => {
   const dispatch = useDispatch();
@@ -33,7 +34,9 @@ const RugbyComponent = () => {
           {items?.map((item) => (
             <div key={item.guid}>
               <h3>{item.title}</h3>
-              <p>{item.pubDate}</p>
+              <p style={{ fontSize: '0.7em' }}>
+                {moment(item.pubDate).format('DD-MM-YY hh:mm')}
+              </p>
               <div dangerouslySetInnerHTML={{ __html: item.description }} />
             </div>
           ))}

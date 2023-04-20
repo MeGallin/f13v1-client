@@ -80,7 +80,7 @@ export const footballDataAction = () => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `https://api.rss2json.com/v1/api.json?rss_url=https://www.motorsport.com/rss/motogp/news/`,
+      url: `https://api.rss2json.com/v1/api.json?rss_url=https://feeds.bbci.co.uk/sport/football/rss.xml`,
     };
 
     const { data } = await axios.request(options);
