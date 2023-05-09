@@ -42,7 +42,6 @@
   font-size: 0.9rem;
   padding: 0.4em;
   background-color: var(--border-colour);
-  border-left: 8px solid var(--danger);
   background-image: repeating-radial-gradient(
       circle at 0 0,
       transparent 0,
@@ -52,6 +51,13 @@
 }
 .calendar-practice sup {
   font-weight: bold;
+}
+
+.calendar-practice.event-pending {
+  border-left: 8px solid var(--danger);
+}
+.calendar-practice.event-completed {
+  border-left: 8px solid var(--success);
 }
 
 .calendar-bg {

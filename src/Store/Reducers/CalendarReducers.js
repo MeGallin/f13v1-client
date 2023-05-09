@@ -2,6 +2,12 @@ import {
   CALENDAR_FAILURE,
   CALENDAR_REQUEST,
   CALENDAR_SUCCESS,
+  WINNERS_ROUND_FIVE_FAILURE,
+  WINNERS_ROUND_FIVE_REQUEST,
+  WINNERS_ROUND_FIVE_SUCCESS,
+  WINNERS_ROUND_FOUR_FAILURE,
+  WINNERS_ROUND_FOUR_REQUEST,
+  WINNERS_ROUND_FOUR_SUCCESS,
   WINNERS_ROUND_ONE_FAILURE,
   WINNERS_ROUND_ONE_REQUEST,
   WINNERS_ROUND_ONE_SUCCESS,
@@ -11,7 +17,7 @@ import {
   WINNERS_ROUND_TWO_FAILURE,
   WINNERS_ROUND_TWO_REQUEST,
   WINNERS_ROUND_TWO_SUCCESS,
-} from "../Constants/CalendarConstants";
+} from '../Constants/CalendarConstants';
 
 //GET:   race result
 export const calendarReducer = (state = {}, action) => {
@@ -82,6 +88,42 @@ export const winnersRoundThreeReducer = (state = {}, action) => {
         ...action.payload,
       };
     case WINNERS_ROUND_THREE_FAILURE:
+      return { loading: false, error: action.payload };
+
+    default:
+      return { ...state };
+  }
+};
+//GET: Winners Round FOUR
+export const winnersRoundFourReducer = (state = {}, action) => {
+  switch (action.type) {
+    case WINNERS_ROUND_FOUR_REQUEST:
+      return { loading: true };
+    case WINNERS_ROUND_FOUR_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        ...action.payload,
+      };
+    case WINNERS_ROUND_FOUR_FAILURE:
+      return { loading: false, error: action.payload };
+
+    default:
+      return { ...state };
+  }
+};
+//GET: Winners Round FIVE
+export const winnersRoundFiveReducer = (state = {}, action) => {
+  switch (action.type) {
+    case WINNERS_ROUND_FIVE_REQUEST:
+      return { loading: true };
+    case WINNERS_ROUND_FIVE_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+        ...action.payload,
+      };
+    case WINNERS_ROUND_FIVE_FAILURE:
       return { loading: false, error: action.payload };
 
     default:
