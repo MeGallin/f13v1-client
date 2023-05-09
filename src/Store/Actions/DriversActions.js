@@ -38,7 +38,7 @@ export const driversAction = (year) => async (dispatch) => {
 //GET: Drivers Standings
 export const driversStandingsAction = (year, round) => async (dispatch) => {
   // ../../../src/assets/data/drivers.json
-  //   https://ergast.com/api/f1/2023/3/driverStandings.json?callback
+  //   https://ergast.com/api/f1/2023/${round}/driverStandings.json?callback
 
   try {
     dispatch({
@@ -47,7 +47,7 @@ export const driversStandingsAction = (year, round) => async (dispatch) => {
 
     const options = {
       method: 'GET',
-      url: `https://ergast.com/api/f1/2023/3/driverStandings.json?callback`,
+      url: `https://ergast.com/api/f1/2023/${round}/driverStandings.json?callback`,
     };
 
     const { data } = await axios.request(options);

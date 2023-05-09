@@ -22,7 +22,7 @@ const StandingsComponent = () => {
 
   useEffect(() => {
     //Dispatch Action
-    if (!MRData) dispatch(driversStandingsAction(2023, 3));
+    if (!MRData) dispatch(driversStandingsAction(2023, 5));
   }, [dispatch]);
   return (
     <>
